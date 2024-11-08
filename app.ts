@@ -6,6 +6,8 @@ const urlForm = document.getElementById('urlForm') as HTMLFormElement;
 const messageDiv = document.getElementById('message') as HTMLDivElement;
 const submitButton = urlForm.querySelector('button') as HTMLButtonElement;
 
+// validator package is highly configurable, so lets use it here instead of regex or similar
+// in this case, since requirements aren't known, lets use the default validation
 function validateURL(url: string): boolean {
   return validator.isURL(url);
 }
@@ -50,6 +52,14 @@ urlForm.addEventListener('submit', (event) => {
   }
 });
 
+// The assumption here is that the user-provided URL would be
+// sent to a backend, which would in turn perform the necessary operation
+// and check if the URL is a directory listing or a file (or any other condition)
+// second assumption that the backend would come back with JSON payload with keys something like:
+// { "URLexists": "true", "isDirectory": "false" } or similar.
+// The front end would parse these values and notify the user of the result.
+// In this scenario, we're just pinging real, known-safe remote (for async op), but are generating
+// a radom 50/50 chance of it 'being a directory' or not, and notifying the user of this "result"
 function mockBackendCall(url: string) {
   fetch('https://jsonplaceholder.typicode.com/users', {
     method: 'POST',

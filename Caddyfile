@@ -1,0 +1,15 @@
+{
+    storage file_system {
+        root ./caddy_data
+    }
+}
+
+localhost:8443
+
+tls internal
+
+encode gzip
+
+root * ./
+
+file_server

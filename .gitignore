@@ -1,0 +1,4 @@
+caddy_data/**/*
+caddy_data/*
+!caddy_data/.keep
+node_modules

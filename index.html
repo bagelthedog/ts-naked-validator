@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simple URL Validator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dist/styles.css">
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen font-tech">
+    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-md w-full">
+        <h1 class="block text-gray-700 font-bold mb-4 text-center text-2xl">URL Validator</h1>
+        <form id="urlForm" class="flex flex-col">
+            <input type="text" id="urlInput" placeholder="Enter URL"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <div id="message" class="text-red-500 text-sm mt-2"></div>
+            <button type="submit" disabled
+                class="mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed">
+                Submit
+            </button>
+        </form>
+    </div>
+
+    <script src="dist/bundle.js"></script>
+</body>
+
+</html>

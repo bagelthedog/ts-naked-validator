@@ -1,4 +1,4 @@
-#Simple URL Validator (SUV)
+# Simple URL Validator (SUV)
 
 Install Caddy-server (https://caddyserver.com/download)
 
